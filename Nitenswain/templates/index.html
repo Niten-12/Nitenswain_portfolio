@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Niten Swain - Portfolio</title>
+
+    {% load static %}
+    <link
+      rel="icon"
+      href="{% static 'images/letter-n.png' %}"
+      type="image/png"
+    />
+    <link rel="stylesheet" href="{% static 'styles\index1.css' %}" />
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+  </head>
+  <body>
+    <div id="loco">
+      <!-- Navbar Section -->
+      <header id="navbar">
+        <div class="navbar-container">
+          <div class="logo">Ns.</div>
+          <nav>
+            <a href="#skills">Skills</a>
+            <a href="#EXPERIENCE">Experience</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+          </nav>
+        </div>
+      </header>
+      <!-- Main Content Wrapper -->
+      <div class="main-content">
+        <!-- Introduction Section -->
+        <section id="introduction" class="section">
+          <div class="intro-content">
+            <div class="text-content">
+              <h2>
+                Full Stack <br /><span style="display: block; margin-left: 38px"
+                  >Web Developer</span
+                >
+              </h2>
+              <p>
+                Hi! I'm Niten Swain, an Indian-based developer looking for new
+                job opportunities as a Full Stack Web Developer.
+              </p>
+            </div>
+            <div class="image-content">
+              <img src="your-image.jpg" alt="Niten Swain" />
+            </div>
+          </div>
+        </section>
+
+        <!-- Education & Skills Section -->
+        <section id="skills" class="section">
+          <div class="education">
+            <h1 style="color: yellow">| Education & Skills</h1>
+
+            <div class="icon-wrapper">
+              <img
+                src="{% static 'icon/graduation-cap.png' %}"
+                alt="Education Icon"
+                class="icon-animated"
+              />
+            </div>
+
+            <!-- Adjust size as needed -->
+            <!-- Replace with your animated icon class -->
+            <strong class="degree">Master of Computer Application</strong>
+            <p>
+              [2022-2024]<br />
+              ITER College, SOA University, Bhubaneswar, Odisha
+            </p>
+          </div>
+          <br /><br /><br />
+          <button class="download-btn" onclick="downloadPDF()">
+            Download PDF
+          </button>
+          <br />
+          <br />
+          <br />
+          <br />
+          <iframe src="test_project/index.html" frameborder="0"></iframe>
+
+          <div class="skills">
+            <div class="marquee-container">
+              <div class="marquee">
+                <!-- Individual words with gap -->
+                <span>JavaScript</span>
+                <span>GSAP</span>
+                <span>Python</span>
+                <span>Django</span>
+                <span>NumPy</span>
+                <span>PHP</span>
+                <span>Laravel</span>
+                <span>WordPress</span>
+                <span>AWS</span>
+                <span>MySQL</span>
+                <span>MongoDB</span>
+              </div>
+            </div>
+            <!-- template.html -->
+          </div>
+        </section>
+        <!--EXPERIENCE section-->
+        <section id="EXPERIENCE" class="section">
+          <h4>WHAT I HAVE DONE SO FAR</h4>
+          <h2>WORK EXPERIENCE</h2>
+          <div class="timeline">
+            <!-- Circle on the line -->
+            <div class="timeline-circle">
+              <img src="your-icon.png" alt="Icon" />
+              <!-- Replace with your image URL -->
+            </div>
+
+            <!-- Job card on the left -->
+            <div class="job-card job-card-left">
+              <h3>React.js Developer</h3>
+              <p>Starbucks</p>
+              <ul>
+                <li>
+                  Developed and maintained web applications using React.js.
+                </li>
+                <li>Collaborated with cross-functional teams.</li>
+                <li>
+                  Implemented responsive design for cross-browser compatibility.
+                </li>
+                <li>Provided feedback in code reviews.</li>
+              </ul>
+            </div>
+
+            <!-- Job title and date on the right -->
+            <div class="job-info">
+              <span>March 2020 - April 2021</span>
+            </div>
+          </div>
+          <div class="explore_button_EXPERIENCE">
+            <button class="explore-button-EXPERIENCE">
+              Explore All Experience
+            </button>
+          </div>
+        </section>
+        <!-- Projects Section -->
+        <section id="projects" class="section">
+          <h1 style="color: yellow">| Projects</h1>
+          <div class="project-cards">
+            <div class="card-carousel-container">
+              <button class="navi-button left-button-card">&lt;</button>
+              <!-- Left navigation button -->
+              <div class="cards">
+                <div class="card blur-card">Card 1</div>
+                <div class="card main-card">Card 2</div>
+                <div class="card blur-card">Card 3</div>
+              </div>
+              <button class="navi-button right-button-card">&gt;</button>
+              <!-- Right navigation button -->
+            </div>
+          </div>
+          <div class="explore_button">
+            <button class="explore-button">Explore All Projects</button>
+          </div>
+        </section>
+
+        <!-- Contact Section -->
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+          <h1 style="color: yellow">| Contact</h1>
+          <div class="contact-container">
+            <div class="contact-left">
+              <h3>
+                <p>Let's find</p>
+                <p class="highlighted">solutions</p>
+                <p>together?</p>
+              </h3>
+              <p>Fill in the form or just use my contacts below.</p>
+              <p>let’s work on it!</p>
+              <a href="mailto:swainniten2020@gmail.com" class="email"
+                >swainniten2020@gmail.com</a
+              >
+            </div>
+            <div class="contact-right">
+              <div id="messageBox">
+                <input type="text" id="name" placeholder="Name" required />
+                <input type="email" id="email" placeholder="Email" required />
+                <input
+                  type="tel"
+                  id="phone"
+                  placeholder="Phone Number(optional)"
+                  required
+                />
+                <textarea
+                  id="message"
+                  placeholder="Your Message"
+                  required
+                ></textarea>
+                <button onclick="submitForm()">Send</button>
+              </div>
+
+              <div id="thankYouMessage">Thank you for connecting!</div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Footer Section -->
+
+      <footer>
+        <div class="footer-content">
+          {% comment %}
+          <div class="footer-left">
+            <p>Ns.</p>
+          </div>
+          {% endcomment %}
+          <div class="footer-left">
+            <video
+              class="logo-video"
+              autoplay
+              loop
+              muted
+              playsinline
+              disablePictureInPicture
+            >
+              <source src="{% static 'video/logo .webm' %}" type="video/webm" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+
+          <div class="footer-right">
+            <p>You can also find me</p>
+            <p>on social media:</p>
+            <div class="card_social">
+              <a href="https://www.instagram.com/nitenswain/" target="_blank">
+                <div class="darksoul-card1">
+                  <div class="circle1"></div>
+                  <img
+                    src="https://darksoul-codepen.github.io/assets/images/instagram-white-icon.webp"
+                    alt="DarkSoul - Instagram"
+                    width="25"
+                    height="25"
+                    style="z-index: 100"
+                  />
+                  <h2 class="content1">Instagram</h2>
+                </div>
+              </a>
+              <a href="https://github.com/Niten-12" target="_blank">
+                <div class="darksoul-card2">
+                  <div class="circle2"></div>
+                  <img
+                    src="https://img.icons8.com/?size=100&id=WCL5hPLvhUjQ&format=png&color=FFFFFF"
+                    alt="DarkSoul - CodePen"
+                    width="25"
+                    height="25"
+                    style="z-index: 100"
+                  />
+                  <p class="content1" style="font-size: 15px">GitHub</p>
+                </div>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/niten-swain-280427243/"
+                target="_blank"
+              >
+                <div class="darksoul-card3">
+                  <div class="circle3"></div>
+                  <img
+                    src="https://img.icons8.com/?size=100&id=13930&format=png&color=000000"
+                    alt="DarkSoul - Dribbble"
+                    width="25"
+                    height="25"
+                    style="z-index: 100"
+                  />
+                  <h4 class="content1" style="font-weight: 100">Linkedin</h4>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <p class="copyright">
+          copyright&copy; 2024 Niten Swain. All rights reserved.
+        </p>
+      </footer>
+      <!-- End Footer Section -->
+      {% comment %} close loco tag {% endcomment %}
+    </div>
+    <script src="{% static 'scripts/index.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script>
+      var count = 200;
+      var defaults = {
+        origin: { y: 0.7 },
+      };
+
+      function fire(particleRatio, opts) {
+        confetti({
+          ...defaults,
+          ...opts,
+          particleCount: Math.floor(count * particleRatio),
+        });
+      }
+
+      function submitForm() {
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const phone = document.getElementById("phone").value;
+        const message = document.getElementById("message").value;
+
+        if (name && email && phone && message) {
+          document.getElementById("messageBox").style.display = "none";
+          document.getElementById("thankYouMessage").style.display = "block";
+          createParticles();
+          launchConfetti(); // Call the confetti function here
+
+          // Hide the thank you message and show the message box again after 5 seconds
+          setTimeout(() => {
+            document.getElementById("thankYouMessage").style.display = "none";
+            document.getElementById("messageBox").style.display = "flex";
+            // Clear the input fields
+            document.getElementById("name").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("phone").value = "";
+            document.getElementById("message").value = "";
+          }, 5000);
+        } else {
+          alert("Please fill all fields!");
+        }
+      }
+
+      function createParticles() {
+        for (let i = 0; i < 30; i++) {
+          const particle = document.createElement("div");
+          particle.className = "particle";
+          const size = Math.random() * 10 + 5;
+          particle.style.width = `${size}px`;
+          particle.style.height = `${size}px`;
+          particle.style.left = `${Math.random() * 100}vw`;
+          particle.style.bottom = "0";
+          document.body.appendChild(particle);
+          setTimeout(() => {
+            particle.remove();
+          }, 1000);
+        }
+      }
+
+      function launchConfetti() {
+        fire(0.25, {
+          spread: 26,
+          startVelocity: 55,
+        });
+        fire(0.2, {
+          spread: 60,
+        });
+        fire(0.35, {
+          spread: 100,
+          decay: 0.91,
+          scalar: 0.8,
+        });
+        fire(0.1, {
+          spread: 120,
+          startVelocity: 25,
+          decay: 0.92,
+          scalar: 1.2,
+        });
+        fire(0.1, {
+          spread: 120,
+          startVelocity: 45,
+        });
+      }
+      //cards secton
+      const cardsContainer = document.querySelector(".cards");
+      const cards = document.querySelectorAll(".card");
+      const totalCards = cards.length;
+      let currentIndex = 1; // Start with the second card as the main card
+
+      // Function to update the cards
+      function updateCards() {
+        cards.forEach((card, index) => {
+          if (index === currentIndex) {
+            card.classList.add("main-card");
+            card.classList.remove("blur-card");
+          } else {
+            card.classList.add("blur-card");
+            card.classList.remove("main-card");
+          }
+        });
+
+        // Move the cards to show the current index in the center
+        const offset = -((currentIndex - 1) * 670); // 650 width + 20 gap
+        cardsContainer.style.transform = `translateX(${offset}px)`;
+      }
+
+      // Event listener for left button
+      document
+        .querySelector(".left-button-card")
+        .addEventListener("click", () => {
+          currentIndex = (currentIndex - 1 + totalCards) % totalCards; // Wrap around
+          updateCards();
+        });
+
+      // Event listener for right button
+      document
+        .querySelector(".right-button-card")
+        .addEventListener("click", () => {
+          currentIndex = (currentIndex + 1) % totalCards; // Wrap around
+          updateCards();
+        });
+
+      // Initial update
+      updateCards();
+
+      gsap.fromTo(
+        ".loading-page",
+        { opacity: 1 },
+        {
+          opacity: 0,
+          display: "none",
+          duration: 1.5,
+          delay: 3.5,
+        }
+      );
+
+      gsap.fromTo(
+        ".logo-name",
+        {
+          y: 50,
+          opacity: 0,
+        },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 2,
+          delay: 0.5,
+        }
+      );
+
+      // Select the marquee element
+      const marquee = document.querySelector(".marquee");
+
+      // Clone the marquee text for a seamless scrolling effect
+      marquee.innerHTML += marquee.innerHTML;
+
+      // Get the total width of the marquee content after duplication
+      const marqueeWidth = marquee.offsetWidth / 2;
+
+      // Animate the scrolling
+      gsap.to(".marquee", {
+        x: -marqueeWidth,
+        duration: 51, // Adjust duration for scroll speed
+        ease: "linear",
+        repeat: -1,
+      });
+      function downloadPDF() {
+        // Create a link element
+        const link = document.createElement("a");
+
+        // Set link attributes to download a local PDF file
+        link.href = "Niten swain.pdf"; // Replace with the actual path to your local PDF file
+        link.download = "downloaded-file.pdf"; // Name the file for download
+
+        // Append link to body, trigger click, and remove it
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      }
+    </script>
+  </body>
+</html>

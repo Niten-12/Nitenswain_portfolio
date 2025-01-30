@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Card Carousel</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        background-color: #f4f4f4;
+        margin: 0;
+      }
+      .carousel-container {
+        position: relative; /* Set the parent container to relative */
+        display: flex; /* Use flexbox for card alignment */
+        align-items: center; /* Center align vertically */
+        width: 80%; /* Set a width for the carousel */
+      }
+      .button-container {
+        display: flex; /* Use flexbox to align children in a row */
+        position: absolute; /* Position buttons absolutely */
+        width: 100%; /* Full width of the carousel */
+        justify-content: space-between; /* Distribute buttons */
+        top: 50%; /* Center vertically */
+        transform: translateY(-50%); /* Centering adjustment */
+      }
+      .circle-button {
+        width: 60px;
+        height: 60px;
+        border: px solid white; /* White border */
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: black;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.3s;
+      }
+      .circle-button:hover {
+        background-color: #333; /* Darker background on hover */
+        transform: scale(1.1);
+      }
+      .arrow {
+        color: white; /* Arrow color */
+        font-size: 24px;
+        font-weight: bold;
+      }
+      .card-container {
+        display: flex; /* Ensure cards are in a row */
+        gap: 20px;
+        padding: 0 200px;
+        width: 100%; /* Ensure full width for card container */
+      }
+      .card {
+        width: 350px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        background-color: #fff;
+        padding: 20px;
+        text-align: center;
+      }
+      .card img {
+        width: 100%;
+        border-radius: 8px;
+      }
+      .title {
+        font-size: 20px;
+        font-weight: bold;
+        margin-top: 15px;
+        color: #333;
+      }
+      .subtitle {
+        font-size: 14px;
+        color: #555;
+        margin-top: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="carousel-container">
+      <div class="button-container">
+        <div class="circle-button" onclick="showPreviousCards()">
+          <span class="arrow"><</span>
+        </div>
+
+        <div class="circle-button" onclick="showNextCards()">
+          <span class="arrow">></span>
+        </div>
+      </div>
+
+      <!-- Card Container for the first two cards -->
+      <div class="card-container" id="cardSet1">
+        <div class="card" id="card1">
+          <img src="https://via.placeholder.com/250x150" alt="Card Image 1" />
+          <div class="title">Card 1 Title</div>
+          <div class="subtitle">This is a subtitle for the first card.</div>
+        </div>
+
+        <div class="card" id="card2">
+          <img src="https://via.placeholder.com/250x150" alt="Card Image 2" />
+          <div class="title">Card 2 Title</div>
+          <div class="subtitle">This is a subtitle for the second card.</div>
+        </div>
+      </div>
+
+      <!-- Second Card Set (Initially Hidden) -->
+      <div class="card-container" id="cardSet2" style="display: none">
+        <div class="card" id="card3">
+          <img src="https://via.placeholder.com/250x150" alt="Card Image 3" />
+          <div class="title">Card 3 Title</div>
+          <div class="subtitle">This is a subtitle for the third card.</div>
+        </div>
+
+        <div class="card" id="card4">
+          <img src="https://via.placeholder.com/250x150" alt="Card Image 4" />
+          <div class="title">Card 4 Title</div>
+          <div class="subtitle">This is a subtitle for the fourth card.</div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let showingFirstSet = true;
+
+      function showNextCards() {
+        if (showingFirstSet) {
+          document.getElementById("cardSet1").style.display = "none";
+          document.getElementById("cardSet2").style.display = "flex";
+          showingFirstSet = false;
+        }
+      }
+
+      function showPreviousCards() {
+        if (!showingFirstSet) {
+          document.getElementById("cardSet1").style.display = "flex";
+          document.getElementById("cardSet2").style.display = "none";
+          showingFirstSet = true;
+        }
+      }
+    </script>
+  </body>
+</html>
